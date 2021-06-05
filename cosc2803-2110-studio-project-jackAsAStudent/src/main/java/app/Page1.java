@@ -98,13 +98,9 @@ public class Page1 implements Handler {
 
         // to see columnMaker working in action
         JDBCConnection jdbc = new JDBCConnection();
-<<<<<<< Updated upstream
         String[] columns = jdbc.columnMaker(columnInfo);
         html += columns[0] + "<br>";
         html += columns[1];
-=======
-        String columns[] = jdbc.columnMaker(columnInfo);
->>>>>>> Stashed changes
 
         String table;
         // If the user wants to see LGA's

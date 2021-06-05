@@ -4,9 +4,9 @@ import java.util.*;
 
 import javax.lang.model.util.ElementScanner14;
 
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.Add;
+// import org.graalvm.compiler.core.common.type.ArithmeticOpTable.BinaryOp.Add;
 
-import jdk.internal.jshell.tool.resources.version;
+// import jdk.internal.jshell.tool.resources.version;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -546,7 +546,7 @@ public class JDBCConnection {
 
         String html = "<table class = 'tableFixHead'><thead><tr><th> Rank </th><th> LGA </th><th> Population Change </th><th> Homeless Change </th></tr></thead>";
 
-        String query = "SELECT h8.name, eighteen-sixteen AS total, round((((((" + input + ")*1.0))-1)*100), 2) AS homeless ";
+        String query = "SELECT h8.name, twentyeighteen-twentysixteen AS total, round((((((" + input + ")*1.0))-1)*100), 2) AS homeless ";
         query += "FROM population p JOIN homelessatrisk h8 ON p.code = h8.code ";
         query += "JOIN homelessatrisk h6 ON h6.code = h8.code WHERE h6.year = '2016' AND h8.year = '2018'" + add;
 

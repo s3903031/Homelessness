@@ -103,14 +103,23 @@ public class Index implements Handler {
 
         // Box 2: LGA
         html += "<div class=\"seeYourLGA\">";
-        html += "<h1>See your Local Government Area: </h1>"
-                + "<a href = Page1.html>Go through to shallow dive data</a>";
+        html += "<h1>Overview of Homelessness </h1>";
+        html += "<p>There are plenty of people who do not have a place to call home, or at risk of losing their homes.<br>";
+        html += "Here, you will be able to see how many people in your <b>Local Government Area</b> or <b>State</b> are impacted.</p>";
+        html += "<p> You will be able to filter by:";
+        html += "<ul> <li>Gender</li>";
+        html += "<li>Age</li>";
+        html += "<li>Local Government Area or State</li></p>";
+        html += "<a href = Page1.html>Insert Arrow</a>";
         html += "</div>";
 
         // Box 3: Indepth Data
         html += "<div class=\"deeperDive\">";
-        html += "<h3>Interested in seeing more indepth data? </h3>";
-        html += "<a href = Page2.html>Go through to a deep dive data form</a>";
+        html += "<h1>Further Look into Homelessness</h1>";
+        html += "<p>Homelessness is closely related to finances<br>";
+        html += "Here, you will be able to see how many people in your <b>Local Government Area</b> or <b>State</b> are impacted.</p>";
+        html += "<a href = Page2.html>Homelessness and Other Factors</a><br><br>";
+        html += "<a href = Page3.html>Homelessness Over Time</a>";
         html += "</div>";
 
         // Finish the HTML webpage
