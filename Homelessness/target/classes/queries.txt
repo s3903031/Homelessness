@@ -1,0 +1,181 @@
+
+// TOTAL HOMELESS PER LGA
+
+SELECT name, homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60 AS 'Total Homeless' 
+FROM homelessatrisk
+
+
+// TOTAL HOMELESS PER LGA - GENDER F/M
+
+SELECT name, homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60 AS 'Total Females Homeless'
+FROM homelessatrisk
+
+SELECT name, homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60 AS 'Total Males Homeless'
+FROM homelessatrisk
+
+
+// TOTAL HOMELESS PER LGA - AGE BRACKET
+
+SELECT name, homelessm9+homelessf9 AS '0-9 years'
+FROM homelessatrisk
+
+SELECT name, homelessm19+homelessf19 AS '10-19 years'
+FROM homelessatrisk
+
+SELECT name, homelessm29+homelessf29 AS '20-29 years'
+FROM homelessatrisk
+
+SELECT name, homelessm39+homelessf39 AS '30-39 years'
+FROM homelessatrisk
+
+SELECT name, homelessm49+homelessf49 AS '40-49 years'
+FROM homelessatrisk
+
+SELECT name, homelessm59+homelessf59 AS '50-59 years'
+FROM homelessatrisk
+
+SELECT name, homelessm60+homelessf60 AS '60+ years'
+FROM homelessatrisk
+
+
+// TOTAL HOMELESS IN EACH STATE (ONE FIGURE)
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless NSW'
+FROM homelessatrisk
+WHERE code LIKE '1%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless VIC'
+FROM homelessatrisk
+WHERE code LIKE '2%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless QLD'
+FROM homelessatrisk
+WHERE code LIKE '3%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless SA'
+FROM homelessatrisk
+WHERE code LIKE '4%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless WA'
+FROM homelessatrisk
+WHERE code LIKE '5%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless TAS'
+FROM homelessatrisk
+WHERE code LIKE '6%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless NT'
+FROM homelessatrisk
+WHERE code LIKE '7%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless ACT'
+FROM homelessatrisk
+WHERE code LIKE '8%'
+
+SELECT SUM(homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60) AS 'Total Homeless Other'
+FROM homelessatrisk
+WHERE code LIKE '9%'
+
+
+// TOTAL HOMELESS IN EACH STATE - GENDER F/M (ONE FIGURE)
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless NSW'
+FROM homelessatrisk
+WHERE code LIKE '1%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless NSW'
+FROM homelessatrisk
+WHERE code LIKE '1%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless VIC'
+FROM homelessatrisk
+WHERE code LIKE '2%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless VIC'
+FROM homelessatrisk
+WHERE code LIKE '2%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless QLD'
+FROM homelessatrisk
+WHERE code LIKE '3%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless QLD'
+FROM homelessatrisk
+WHERE code LIKE '3%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless SA'
+FROM homelessatrisk
+WHERE code LIKE '4%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless SA'
+FROM homelessatrisk
+WHERE code LIKE '4%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless WA'
+FROM homelessatrisk
+WHERE code LIKE '5%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless WA'
+FROM homelessatrisk
+WHERE code LIKE '5%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless TAS'
+FROM homelessatrisk
+WHERE code LIKE '6%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless TAS'
+FROM homelessatrisk
+WHERE code LIKE '6%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless NT'
+FROM homelessatrisk
+WHERE code LIKE '7%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless NT'
+FROM homelessatrisk
+WHERE code LIKE '7%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless ACT'
+FROM homelessatrisk
+WHERE code LIKE '8%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless ACT'
+FROM homelessatrisk
+WHERE code LIKE '8%'
+
+SELECT SUM(homelessf9+homelessf19+homelessf29+homelessf39+homelessf49+homelessf59+homelessf60) AS 'Total Female Homeless OTHER'
+FROM homelessatrisk
+WHERE code LIKE '9%'
+
+SELECT SUM(homelessm9+homelessm19+homelessm29+homelessm39+homelessm49+homelessm59+homelessm60) AS 'Total Male Homeless OTHER'
+FROM homelessatrisk
+WHERE code LIKE '9%'
+
+
+// TOTAL HOMELESS FOR EACH STATE - AGE BRACKET
+
+tedious, one example: 
+
+SELECT name, homelessm9+homelessf9 AS '0-9 years'
+FROM homelessatrisk
+WHERE code LIKE '1%'
+
+SELECT name, homelessm9+homelessf9 AS '10-19 years'
+FROM homelessatrisk
+WHERE code LIKE '1%'
+
+repeat for each age bracket
+repeat for each state
+
+
+// TOTAL HOMELESS - ASCENDING/DESCENDING
+
+SELECT name, homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60 AS 'Total Homeless' 
+FROM homelessatrisk
+ORDER BY homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60 ASC
+
+SELECT name, homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60 AS 'Total Homeless' 
+FROM homelessatrisk
+ORDER BY homelessf9+homelessm9+homelessf19+homelessm19+homelessf29+homelessm29+homelessf39+homelessm39+homelessf49+homelessm49+homelessf59+homelessm59+homelessf60+homelessm60 DESC
+
+repeat for each.
