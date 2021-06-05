@@ -32,11 +32,12 @@ public class Page2 implements Handler {
         html += "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">";
         html += "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
         html += "    <title>Level3</title>";
-        html = html + "<link rel='stylesheet' type='text/css' href='common.css' />";
+        html = html + "<link rel='stylesheet' type='text/css' href='commonj.css' />";
         html += "</head>";
         html += "<body>";
+        html += "   <div class = 'grid-containter'";
         html += "    <form action = /Page2.html method = 'post'>";
-        html += "       <div>";
+        html += "       <div class = 'grid-item'>";
         html += "           <p>Input an LGA name that you would like data on</p> "
                 + "         <input name = 'userLGA' id = 'userLGA' placeholder = 'Geelong, Melbourne...'>";
         html += "           <p>Or, change values of attributes to filter LGA's (Defaults are min and max)</p>";
@@ -52,7 +53,7 @@ public class Page2 implements Handler {
         html += "           <p>Input a minimum and maximum median weekly rental price between $0 and $650</p>";
         html += "           <Input type = 'number' id = 'minRent' name = 'minRent' min = '0' max = '650' value = '0'><span> $AUD </span>";
         html += "           <Input type = 'number' id = 'maxRent' name = 'maxRent' min = '0' max = '650' value = '650'><span> $AUD </span>";
-        html += "        </div><div>";
+        html += "        </div><div class = 'grid-item'>";
         html += "           <p>Select the states you are interested in</p>";
         html += "           <input type = 'checkbox' id = 'Vic' name = 'Vic' checked>";
         html += "           <label for = 'Vic'>Vic</label>";
@@ -72,7 +73,7 @@ public class Page2 implements Handler {
         html += "           <label for = 'ACT'>ACT</label>";
         html += "           <input type = 'checkbox' id = 'Other' name = 'Other' checked>";
         html += "           <label for = 'Other'>Other</label>";
-        html += "        </div><div>";
+        html += "        </div><div class = 'grid-item'>";
         html += "           <p>Gender</p>";
         html += "             <label for = 'female'>Female</label>";
         html += "             <input type = 'checkbox' name = 'female' id = 'female' checked>";
@@ -104,11 +105,12 @@ public class Page2 implements Handler {
         html += "      <select id='sortBy' name='sortBy'>";
         html += "          <option selected>Homeless people per 100,000 population</option> <option>%Males</option> <option>Median age</option> <option>Median Income</option> <option>Median mortgage repayments</option> <option>Median rent</option>";
         html += "      </select>";
-        html += "      <input type = 'checkbox' name = 'asc' id = 'asc'>";
+        html += "      <input type = 'checkbox' name = 'asc' id = 'asc'>"
                 + "      <label for = 'asc'>Select if you want table sorted lowest to highest</label>";
         html += "        </div>";
         html += "        <br><br> <input type = \"submit\" value = \"show me the data!\">";
         html += "        </form>";
+        html += "       </div>";
         html += "        </body></html>";
 
         String lgaName = context.formParam("userLGA");
