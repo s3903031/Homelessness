@@ -1,0 +1,115 @@
+
+Level 3.2
+
+1i. homeless change for each LGA (homeless 2018 - homeless 2016, total, not percentages)
+
+SELECT name, (h8.hf09+h8.hm09+h8.hf19+h8.hm19+h8.hf29+h8.hm29+h8.hf39+h8.hm39+h8.hf49+h8.hm49+h8.hf59+h8.hm59+h8.hf60+h8.hm60) - 
+(h6.hf09+h6.hm09+h6.hf19+h6.hm19+h6.hf29+h6.hm29+h6.hf39+h6.hm39+h6.hf49+h6.hm49+h6.hf59+h6.hm59+h6.hf60+h6.hm60)
+FROM homelessatrisk h6 JOIN homelessatrisk h8 ON h6.code = h8.code
+WHERE h6.year = '2016' AND h8.year = '2018'
+
+        FUNTIONAL
+
+1ii. at risk change for each LGA
+
+SELECT name, (h8.af09+h8.am09+h8.af19+h8.am19+h8.af29+h8.am29+h8.af39+h8.am39+h8.af49+h8.am49+h8.af59+h8.am59+h8.af60+h8.am60) - 
+(h6.af09+h6.am09+h6.af19+h6.am19+h6.af29+h6.am29+h6.af39+h6.am39+h6.af49+h6.am49+h6.af59+h6.am59+h6.af60+h6.am60)
+FROM homelessatrisk h8 JOIN homelessatrisk h6 ON h6.code = h8.code
+WHERE h6.year = '2016' AND h8.year = '2018'
+
+        FUNCTIONAL
+
+1iii. total population change - need to be able to filter tho...
+
+SELECT name, eighteen-sixteen
+FROM population
+
+        FUNCTIONAL
+
+1iv. ratio
+SELECT name, ROUND((((((x))*1.0)/(((y))*1.0))-1)*100, 2)
+FROM homelessatrisk h8 JOIN homelessatrisk h6 ON h6.code = h8.code
+
+WHERE h6.year = '2016' AND h8.year = '2018'
+AND ROUND((((((x))*1.0)/(((y))*1.0))-1)*100, 2) IS NOT NULL
+
+x = h8.hf09+h8.hm09+h8.hf19+h8.hm19+h8.hf29+h8.hm29+h8.hf39+h8.hm39+h8.hf49+h8.hm49+h8.hf59+h8.hm59+h8.hf60+h8.hm60) - 
+(h6.hf09+h6.hm09+h6.hf19+h6.hm19+h6.hf29+h6.hm29+h6.hf39+h6.hm39+h6.hf49+h6.hm49+h6.hf59+h6.hm59+h6.hf60+h6.hm60
+y = h8.af09+h8.am09+h8.af19+h8.am19+h8.af29+h8.am29+h8.af39+h8.am39+h8.af49+h8.am49+h8.af59+h8.am59+h8.af60+h8.am60) - 
+(h6.af09+h6.am09+h6.af19+h6.am19+h6.af29+h6.am29+h6.af39+h6.am39+h6.af49+h6.am49+h6.af59+h6.am59+h6.af60+h6.am60
+
+
+SELECT name, (((((h8.hf09+h8.hm09+h8.hf19+h8.hm19+h8.hf29+h8.hm29+h8.hf39+h8.hm39+h8.hf49+h8.hm49+h8.hf59+h8.hm59+h8.hf60+h8.hm60) - 
+(h6.hf09+h6.hm09+h6.hf19+h6.hm19+h6.hf29+h6.hm29+h6.hf39+h6.hm39+h6.hf49+h6.hm49+h6.hf59+h6.hm59+h6.hf60+h6.hm60))*1.0)/(((h8.af09+h8.am09+h8.af19+h8.am19+h8.af29+h8.am29+h8.af39+h8.am39+h8.af49+h8.am49+h8.af59+h8.am59+h8.af60+h8.am60) - 
+(h6.af09+h6.am09+h6.af19+h6.am19+h6.af29+h6.am29+h6.af39+h6.am39+h6.af49+h6.am49+h6.af59+h6.am59+h6.af60+h6.am60))*1.0))-1)*100 AS total
+
+FROM homelessatrisk h8 JOIN homelessatrisk h6 ON h6.code = h8.code WHERE h6.year = '2016' AND h8.year = '2018'
+AND ROUND((((((h8.hf09+h8.hm09+h8.hf19+h8.hm19+h8.hf29+h8.hm29+h8.hf39+h8.hm39+h8.hf49+h8.hm49+h8.hf59+h8.hm59+h8.hf60+h8.hm60) - 
+(h6.hf09+h6.hm09+h6.hf19+h6.hm19+h6.hf29+h6.hm29+h6.hf39+h6.hm39+h6.hf49+h6.hm49+h6.hf59+h6.hm59+h6.hf60+h6.hm60))*1.0)/(((h8.af09+h8.am09+h8.af19+h8.am19+h8.af29+h8.am29+h8.af39+h8.am39+h8.af49+h8.am49+h8.af59+h8.am59+h8.af60+h8.am60) - 
+(h6.af09+h6.am09+h6.af19+h6.am19+h6.af29+h6.am29+h6.af39+h6.am39+h6.af49+h6.am49+h6.af59+h6.am59+h6.af60+h6.am60))*1.0))-1)*100, 2) IS NOT NULL ORDER BY h8.name ASC
+
+
+SELECT h8.name, CAST((((((h8.hf09+h8.hm09+h8.hf19+h8.hm19+h8.hf29+h8.hm29+h8.hf39+h8.hm39+h8.hf49+h8.hm49+h8.hf59+h8.hm59+h8.hf60+h8.hm60+h8.UF+h8.UM) - 
+(h6.hf09+h6.hm09+h6.hf19+h6.hm19+h6.hf29+h6.hm29+h6.hf39+h6.hm39+h6.hf49+h6.hm49+h6.hf59+h6.hm59+h6.hf60+h6.hm60+h6.UF+h6.UM))*1.0)/(((h8.af09+h8.am09+h8.af19+h8.am19+h8.af29+h8.am29+h8.af39+h8.am39+h8.af49+h8.am49+h8.af59+h8.am59+h8.af60+h8.am60) - 
+(h6.af09+h6.am09+h6.af19+h6.am19+h6.af29+h6.am29+h6.af39+h6.am39+h6.af49+h6.am49+h6.af59+h6.am59+h6.af60+h6.am60))*1.0))-1)*100 AS INT) AS total
+FROM homelessatrisk h8 JOIN homelessatrisk h6 ON h6.code = h8.code WHERE h6.year = '2016' AND h8.year = '2018'
+AND total IS NOT NULL ORDER BY h8.name ASC
+
+h8.HF09+h8.HM09+h8.HF19+h8.HM19+h8.HF29+h8.HM29+h8.HF39+h8.HM39+h8.HF49+h8.HM49+h8.HF59+h8.HM59+h8.HF60+h8.HM60+h8.UF+h8.UM)-(h6.HF09+h6.HM09+h6.HF19+h6.HM19+h6.HF29+h6.HM29+h6.HF39+h6.HM39+h6.HF49+h6.HM49+h6.HF59+h6.HM59+h6.HF60+h6.HM60+h6.UF+h6.UM
+h8.AF09+h8.AM09+h8.AF19+h8.AM19+h8.AF29+h8.AM29+h8.AF39+h8.AM39+h8.AF49+h8.AM49+h8.AF59+h8.AM59+h8.AF60+h8.AM60+h8.UF+h8.UM)-(h6.AF09+h6.AM09+h6.AF19+h6.AM19+h6.AF29+h6.AM29+h6.AF39+h6.AM39+h6.AF49+h6.AM49+h6.AF59+h6.AM59+h6.AF60+h6.AM60+h6.UF+h6.UM
+
+SELECT h8.name, (CAST((((((h8.HF09+h8.HM09+h8.HF19+h8.HM19+h8.HF29+h8.HM29+h8.HF39+h8.HM39+h8.HF49+h8.HM49+h8.HF59+h8.HM59+h8.HF60+h8.HM60+h8.UF+h8.UM)-
+(h6.HF09+h6.HM09+h6.HF19+h6.HM19+h6.HF29+h6.HM29+h6.HF39+h6.HM39+h6.HF49+h6.HM49+h6.HF59+h6.HM59+h6.HF60+h6.HM60+h6.UF+h6.UM))*1.0)/(((h8.AF09+h8.AM09+h8.AF19+h8.AM19+h8.AF29+h8.AM29+h8.AF39+h8.AM39+h8.AF49+h8.AM49+h8.AF59+h8.AM59+h8.AF60+h8.AM60)-
+(h6.AF09+h6.AM09+h6.AF19+h6.AM19+h6.AF29+h6.AM29+h6.AF39+h6.AM39+h6.AF49+h6.AM49+h6.AF59+h6.AM59+h6.AF60+h6.AM60))*1.0))-1)*100 AS INT)) AS total
+FROM homelessatrisk h6 JOIN homelessatrisk h8 ON h6.code = h8.code WHERE h6.year = '2016' AND h8.year = '2018' AND total IS NOT 
+NULL AND (h8.code LIKE '2%' OR h8.code LIKE '4%' OR h8.code LIKE '7%' OR h8.code LIKE '5%' OR h8.code LIKE '1%' OR h8.code LIKE '3%' OR h8.code LIKE '6%' OR h8.code LIKE '8%' OR h8.code LIKE '9%') ORDER BY h8.name ASC  
+
+        FUNTIONAL
+
+2.
+
+filter by region                  FUNCTIONAL
+WHERE h6.code LIKE '1%'
+
+filter by gender                  FUNCTIONAL
+remove f's or m's in query                
+
+filter by agegroup                FUNCTIONAL
+remove 09 etc.
+
+e.g. total population has increased, output         FUNTIONAL
+increase: WHERE (query) > 0
+
+
+3,
+
+ii. largest increase in homeless women      FUNCTIONAL
+previous filters +
+WHERE (query) > 0
+ORDER BY [query] DESC
+
+iii. largest decrease                       FUNCTIONAL
+
+previous filters +
+WHERE (query) < 0
+ORDER BY [query] ASC
+
+iv. at risk in 2016 to homeless in 2018.          TBC
+
+atrisk2016/total2016 to homeless2018/total2018
+
+
+
+
+
+
+
+4. 
+percentage change homeless 16-18
+percentage change total population 16-18          TBC
+trend: 
+
+SELECT name, eighteen-sixteen AS population, (((((h8.hf09+h8.hm09+h8.hf19+h8.hm19+h8.hf29+h8.hm29+h8.hf39+h8.hm39+h8.hf49+h8.hm49+h8.hf59+h8.hm59+h8.hf60+h8.hm60)*1.0)/((h6.hf09+h6.hm09+h6.hf19+h6.hm19+h6.hf29+h6.hm29+h6.hf39+h6.hm39+h6.hf49+h6.hm49+h6.hf59+h6.hm59+h6.hf60+h6.hm60)*1.0))-1)*100) AS homeless
+FROM population p JOIN homelessatrisk h8 ON p.code = h8.code
+JOIN homelessatrisk h6 ON h6.code = h8.code
+WHERE h6.year = '2016' AND h8.year = '2018'

@@ -1,0 +1,61 @@
+1. Need to hear back from Tim
+2. Test that state table maker works. Find out why it doesn't show results for 'other' states.
+Enable a user to see how other factors might impact homelessness in each LGA. For 
+each LGA a user should be able to find the:
+    i. Ratio of homeless people to the total number of people (Column)
+    ii. Ratio of homeless people by age and gender to the total number of people (Filters)
+    iii. Median age, median mortgage repayments, weekly rent and weekly income for 
+households in the LGA (Columns)
+• Enable the user to filter the above information by region, gender and numeric ranges. 
+For example, find the homeless ratio for women in Victorian LGAs with an average (Filters)
+weekly income under $500 and a median age of over 50.
+• Enable a user to answer questions such as:
+    i. What is the homeless rate in the LGA with the highest/lowest weekly income? (Sorting)
+    ii. What is the homeless rate in the LGA with the highest/lowest median age? (Sorting)
+    iii. What is the homeless rate in the LGA with the highest/lowest rent? (Sorting)
+    iv. What is the LGA with the highest/lowest ratio of homeless gender? (Sorting (Also make column))
+• Enable a user to see if there are any trends of the number of homeless people based on 
+the average weekly income in each LGA. For example, showing how the homeless ratio
+(as calculated above) changes as the weekly income increases or decreases (Sorting)
+A total / average row at the top
+Columns needed:
+1. Ratio of homeless poeple to the total number of people (homeless people per 10000 population)
+2. Median age
+3. Median mortgage repayments
+4. Weekly rent
+5. Weekly income
+6. Homeless gener ratio (Homeless males / Homeless females) *Only make this column if they have selected both males and females
+Filters needed:
+1. Age
+2. State
+3. gender
+4. LGA attributes (Min and Max for each)
+Sorting:
+1. Weekly income
+2. Median age
+3. Median rent
+4. Homeless gender ratio
+
+
+2. Compare the change in homelessness over time. You should:
+• Enable a user to study how the rate of homelessness has changed between 2016 and 
+2018 in all LGAs compared to changes in the population. For each LGA a user should be 
+able to find the:
+    i. Total (or percentage) change in the number of homeless people (Column)
+    ii. Total (or percentage) change in the number of ‘at risk’ people (Column)
+    iii. Total (or percentage) change in the total population (Column)
+    iv. Ratio of the change in the number of homeless people to the change in the 
+number of people at risk of being homeless (Column)
+• Enable the user to filter the information by region, gender and age group. For example, 
+find the ratio in the changes of homeless women in Victorian LGAs where the total 
+population of the LGA has increased. (Filters)
+• Enable a user to answer questions such as:
+    i. What is the change in homelessness in the LGA with the largest change in total 
+    population? (Sorting)
+    ii. Which LGA has seen the largest increase of homeless women? (Filters)
+    iii. Which LGA has seen the largest decrease of homeless children? (Filters)
+    iv. Which LGA has seen the largest shift of people from being ‘at risk’ to actually 
+    being homeless? (Can we assume that anyone who was homeless in 2016 was at risk of being homeleses in 2016)
+• Enable a user to see if there are any trends of the number of homeless people based on 
+how the percentage change in homeless people (as calculated above) changes as the 
+total population of a LGA changes (Sorting)

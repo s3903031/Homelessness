@@ -1,0 +1,160 @@
+/* -----------------------
+Base styles
+To change: padding and margins, so the inputs are not so far apart.
+------------------------*/
+
+/* NAVIGATION */
+.navbar {
+  margin-top: 100px;
+  margin-right: 5%;
+  margin-left: 5%;
+  text-align: center;
+  background-color: #efc69b;
+  padding: 10px;
+}
+
+.navOption {
+  display: inline;
+  margin-top: 100px;
+  padding: 10px;
+}
+
+.navbar a:hover {
+  color: #2c5784;
+}
+
+/* LANDING PAGE - Box 1 */
+
+.knowledgeTestBox {
+  overflow: hidden;
+  position: relative;
+}
+
+.knowledgeTestBG {
+  opacity: 0.6;
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 0;
+  width: 90%;
+  height: auto;
+}
+
+.knowledgeTestContent {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 50;
+  color: #2c5784;
+  font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  position: relative;
+}
+
+/* LANDING PAGE - Box 2 */
+
+.seeYourLGA {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 50;
+  text-align: center;
+  color: #2c5784;
+  background-color: #efc69b;
+  font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+
+/* LANDING PAGE - Box 3 */
+
+.deeperDive {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 50;
+  text-align: center;
+  color: #2c5784;
+  background-color: #efc69b;
+  font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+
+/* LANDING PAGE - Box 3 */
+
+.shallowPage {
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 50;
+  text-align: center;
+  color: #2c5784;
+  background-color: #efc69b;
+  font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+}
+*/ .form-group {
+  margin-top: 0;
+}
+
+.form {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+}
+
+.page {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/*styling for the results table */
+.tableFixHead {
+  margin-top: 40px;
+  overflow-y: auto;
+  height: 500px;
+}
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+}
+
+table tr td {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+}
+th,
+td {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  margin-left: auto;
+  margin-right: auto;
+}
+th {
+  background: #eee;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [line1 first] 1fr [line2] 1fr [line3 last];
+  grid-template-rows: [row1start first] auto [row1end row2start] auto [row2end row3Start] auto [row3end end];
+  grid-template-areas:
+    "LgaAttributes PeopleAttributes"
+    "DataRepresentation DataRepresentation";
+  justify-items: center;
+}
+.item-a {
+  grid-area: LgaAttributes;
+}
+.item-b {
+  grid-area: PeopleAttributes;
+}
+.item-c {
+  grid-area: DataRepresentation;
+}
+#showingResultsFor {
+  text-align: center;
+}
