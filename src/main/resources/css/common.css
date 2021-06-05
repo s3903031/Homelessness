@@ -3,22 +3,20 @@ Base styles
 To change: padding and margins, so the inputs are not so far apart.
 ------------------------*/
 
-
-
 /* NAVIGATION */
 .navbar {
-  margin-top:100px;
-  margin-right:5%;
-  margin-left:5%;
+  margin-top: 100px;
+  margin-right: 5%;
+  margin-left: 5%;
   text-align: center;
   background-color: #efc69b;
-  padding:10px;
+  padding: 10px;
 }
 
 .navOption {
   display: inline;
-  margin-top:100px;
-  padding:10px;
+  margin-top: 100px;
+  padding: 10px;
 }
 
 .navbar a:hover {
@@ -89,9 +87,8 @@ To change: padding and margins, so the inputs are not so far apart.
   color: #2c5784;
   background-color: #efc69b;
   font: 1em/1.2 "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
-}*/
-
-.form-group {
+}
+*/ .form-group {
   margin-top: 0;
 }
 
@@ -99,7 +96,7 @@ To change: padding and margins, so the inputs are not so far apart.
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 5%
+  margin-top: 5%;
 }
 
 .page {
@@ -129,7 +126,8 @@ table {
   margin-right: auto;
   margin-bottom: 10%;
 }
-th, td {
+th,
+td {
   padding: 8px 16px;
   border: 1px solid #ccc;
   margin-left: auto;
@@ -137,4 +135,26 @@ th, td {
 }
 th {
   background: #eee;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: [line1 first] 1fr [line2] 1fr [line3 last];
+  grid-template-rows: [row1start first] auto [row1end row2start] auto [row2end row3Start] auto [row3end end];
+  grid-template-areas:
+    "LgaAttributes PeopleAttributes"
+    "DataRepresentation DataRepresentation";
+  justify-items: center;
+}
+.item-a {
+  grid-area: LgaAttributes;
+}
+.item-b {
+  grid-area: PeopleAttributes;
+}
+.item-c {
+  grid-area: DataRepresentation;
+}
+#showingResultsFor {
+  text-align: center;
 }

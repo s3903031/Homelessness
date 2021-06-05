@@ -35,9 +35,9 @@ public class Page2 implements Handler {
         html = html + "<link rel='stylesheet' type='text/css' href='common.css' />";
         html += "</head>";
         html += "<body>";
-        html += "   <div>";
-        html += "    <form action = /Page2.html method = 'post'>";
-        html += "       <div>";
+        html += "   <div class = 'container'>";
+        html += "       <div class = 'item-a'>";
+        html += "           <form action = /Page2.html method = 'post'>";
         html += "           <p>Input an LGA name that you would like data on</p> "
                 + "         <input name = 'userLGA' id = 'userLGA' placeholder = 'Geelong, Melbourne...'>";
         html += "           <p>Or, change values of attributes to filter LGA's (Defaults are min and max)</p>";
@@ -53,7 +53,8 @@ public class Page2 implements Handler {
         html += "           <p>Input a minimum and maximum median weekly rental price between $0 and $650</p>";
         html += "           <Input type = 'number' id = 'minRent' name = 'minRent' min = '0' max = '650' value = '0'><span> $AUD </span>";
         html += "           <Input type = 'number' id = 'maxRent' name = 'maxRent' min = '0' max = '650' value = '650'><span> $AUD </span>";
-        html += "        </div><div>";
+
+        html += "        </div><div class = 'item-b'>";
         html += "           <p>Select the states you are interested in</p>";
         html += "           <input type = 'checkbox' id = 'Vic' name = 'Vic' checked>";
         html += "           <label for = 'Vic'>Vic</label>";
@@ -73,7 +74,6 @@ public class Page2 implements Handler {
         html += "           <label for = 'ACT'>ACT</label>";
         html += "           <input type = 'checkbox' id = 'Other' name = 'Other' checked>";
         html += "           <label for = 'Other'>Other</label>";
-        html += "        </div><div>";
         html += "           <p>Gender</p>";
         html += "             <label for = 'female'>Female</label>";
         html += "             <input type = 'checkbox' name = 'female' id = 'female' checked>";
@@ -101,17 +101,19 @@ public class Page2 implements Handler {
         html += "             <label for = 'plus'>60+</label>";
         html += "             <input type = 'checkbox' name = 'U' id = 'U'>";
         html += "             <label for = 'plus'>Unknown ages</label>";
+
+        html += "      </div><div class = 'item-c'>";
         html += "      <br><br><label for='sortBy'>Select how you want the data to be sorted (Dropdown):</label>";
         html += "      <select id='sortBy' name='sortBy'>";
         html += "          <option selected>Homeless people per 100,000 population</option> <option>%Males</option> <option>Median age</option> <option>Median Income</option> <option>Median mortgage repayments</option> <option>Median rent</option>";
         html += "      </select>";
         html += "      <input type = 'checkbox' name = 'asc' id = 'asc'>"
                 + "      <label for = 'asc'>Select if you want table sorted lowest to highest</label>";
-        html += "        <br><br> <input type = \"submit\" value = \"show me the data!\">";
+        html += "        <input type = \"submit\" value = \"show me the data!\" id = 'showData'>";
         html += "        </form>";
         html += "        </div>";
         html += "       </div>";
-        html += "        </body></html>";
+        html += "      </body></html>";
 
         String lgaName = context.formParam("userLGA");
         if (lgaName == null) {
@@ -157,7 +159,7 @@ public class Page2 implements Handler {
 
         String query[] = jdbc.queryMaker1(lgaName, "2018", columns, lgaFilters, asc, sortBy, columns[2]);
         String table = jdbc.tableMakerAttributes(query);
-        html += query[0];
+        // html += query[0];
         html += table;
         html += "</body> </html>";
 
